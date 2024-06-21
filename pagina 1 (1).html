@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="img/imagen.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="css/pagina1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacaciones</title>
+</head>
+
+<body >
+
+    <divc lass="menu">
+        <marquee scrollamount="5px" behavior="alternate" direction=""><a href="pagina1.html">Destinos Locales</a><a
+                href="pagina2.html">Consejos de viaje</a><a href="pagina3.html">Destinos nacionales</a><a
+                href="pagina4.html">paquetes de viaje</a><a href="pagina5.html">Lugares falsos</a><a
+                href="pagina2.html">--></a></marquee>
+    </div>
+
+    <h1>Vacaciones</h1>
+    <p>Quien no ha querido escapar un mes de todo el estres que les genera el trafico, el trabajo, escuela o vida
+        familiar, y sumergirse en la tranquilidad de un destino paradisíaco, explorar culturas nuevas, probar sabores
+        exóticos y crear recuerdos inolvidables. En nuestro sitio web, te ofrecemos la oportunidad de hacer realidad ese
+        sueño. Descubre una amplia gama de destinos emocionantes, consejos útiles para planificar tu viaje, experiencias
+        auténticas recomendadas por locales y mucho más. Deja atrás la rutina y únete a nosotros en una aventura que
+        cambiará tu perspectiva y te hará sentir vivo de nuevo. ¡Bienvenido a tu escapada perfecta!</p>
+
+    <h2>Donde ir</h2>
+    <p>Para disfrutar de esto debemos saber donde ir, como primera opcion te daremos lugares turisticos Locales del
+        Estado de Veracruz</p>
+
+    <ul>
+        <li><strong>Puerto de Veracruz:</strong>
+            <p>El puerto histórico es uno de los destinos más populares. Ofrece playas, como la famosa playa de Villa
+                del Mar, así como el Malecón y el zócalo lleno de vida y color.</p>
+            <div class="imagen"><img src="img/imagen1.jpeg" alt="Puerto de Veracruz" width="250px"></div>
+        </li>
+        <li><strong>Zona Arqueológica de El Tajín:</strong>
+            <p>Esta antigua ciudad totonaca es famosa por sus impresionantes pirámides, como la Pirámide de los Nichos.
+                Es reconocida como Patrimonio Mundial de la UNESCO.</p>
+            <div class="imagen"><img src="img/imagen2.jpeg" alt="Zona Arqueológica de El Tajín" width="250px"></div>
+        </li>
+        <li><strong>Xalapa:</strong>
+            <p>La capital del estado es conocida por su belleza arquitectónica, museos como el Museo de Antropología de
+                Xalapa y el Museo de Ciencias Ambientales, así como por el Parque Ecológico Macuiltépetl.</p>
+            <div class="imagen"><img src="img/imagen3.jpeg" alt="Xalapa" width="250px"></div>
+        </li>
+        <li><strong>Catemaco:</strong>
+            <p>Este pueblo mágico es famoso por sus paisajes exuberantes, el Lago de Catemaco y sus tradiciones
+                esotéricas. Es un lugar ideal para explorar la naturaleza y la cultura local.</p>
+            <div class="imagen"><img src="img/imagen4.jpeg" alt="Catemaco" width="250px"></div>
+        </li>
+        <li><strong>Boca del Río:</strong>
+            <p>Junto a Veracruz, Boca del Río es un destino popular por sus playas, como Mocambo, y su oferta
+                gastronómica y nocturna.</p>
+            <div class="imagen"><img src="img/imagen5.jpeg" alt="Boca del Río" width="250px"></div>
+        </li>
+        <li><strong>Tlacotalpan:</strong>
+            <p>Otro pueblo mágico, Tlacotalpan es conocido por su arquitectura colonial y su ambiente tranquilo a
+                orillas del río Papaloapan. Es un lugar ideal para disfrutar de la cultura y la música tradicional.</p>
+            <div class="imagen"><img src="img/imagen6.jpeg" alt="Tlacotalpan" width="250px"></div>
+        </li>
+        <li><strong>Cascada de Texolo:</strong>
+            <p>Ubicada en el municipio de Xico, esta impresionante cascada es un destino popular para los amantes de la
+                naturaleza y el ecoturismo.</p>
+            <div class="imagen"><img src="img/imagen7.jpeg" alt="Cascada de Texolo" width="200px"></div>
+        </li>
+    </ul>
+    <h3>Te daremos en la siguiente pagina mas recomendaciones para viajar</h3>
+
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Shoot 'em Up Game</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+    #game-container {
+        position: relative;
+        width: 600px;
+        height: 800px;
+        border: 1px solid #ccc;
+    }
+    #player {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background-color: transparent;
+        transform: rotate(45deg); /* Rotación para forma de rombo */
+        border: 2px solid blue;
+        bottom: 10px;
+        left: calc(50% - 30px);
+    }
+    .enemy {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: red;
+    }
+</style>
+</head>
+<body>
+<div id="game-container">
+    <div id="player"></div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const gameContainer = document.getElementById('game-container');
+    const player = document.getElementById('player');
+    let playerX = 270; // Initial position of player
+
+    document.addEventListener('keydown', function(event) {
+        if (event.code === 'ArrowLeft' && playerX > 0) {
+            playerX -= 10;
+        } else if (event.code === 'ArrowRight' && playerX < 540) {
+            playerX += 10;
+        }
+        player.style.left = playerX + 'px';
+    });
+
+    function createEnemy() {
+        const enemy = document.createElement('div');
+        enemy.classList.add('enemy');
+        enemy.style.left = Math.random() * 560 + 'px'; // Random position along x-axis
+        enemy.style.top = '-40px'; // Start above the game container
+        gameContainer.appendChild(enemy);
+
+        const moveEnemy = setInterval(function() {
+            const enemyTop = parseInt(enemy.style.top);
+            if (enemyTop > 800) {
+                clearInterval(moveEnemy);
+                gameContainer.removeChild(enemy);
+            } else {
+                enemy.style.top = enemyTop + 5 + 'px'; // Enemy speed
+                // Collision detection (basic)
+                if (checkCollision(enemy, player)) {
+                    clearInterval(moveEnemy);
+                    gameContainer.removeChild(enemy);
+                    alert('Game Over');
+                    location.reload(); // Restart the game
+                }
+            }
+        }, 30);
+    }
+
+    setInterval(createEnemy, 2000); // Interval for creating enemies
+
+    function checkCollision(enemy, player) {
+        const rect1 = enemy.getBoundingClientRect();
+        const rect2 = player.getBoundingClientRect();
+        return !(rect1.right < rect2.left || 
+                 rect1.left > rect2.right || 
+                 rect1.bottom < rect2.top || 
+                 rect1.top > rect2.bottom);
+    }
+});
+</script>
+</body>
+</html>
